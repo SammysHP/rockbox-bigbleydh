@@ -4,12 +4,15 @@
 %Fl(4,19-Nimbus.fnt)
 #
 # preload images
-%xl(V,volume.bmp,1,1,11)
+%xl(V,volume.bmp,2,1,11)
 %xl(P,playmode.bmp,0,0,4)
 %xl(B,battery.bmp,0,0,9)
 %xl(H,hold.bmp,0,0)
 %xl(S,shuffle.bmp,0,0)
 %xl(R,repeat.bmp,0,0,4)
+%xl(E,eq.bmp,0,0)
+%xl(C,crossfeed.bmp,0,0)
+%xl(M,channels.bmp,0,0,5)
 #
 ## Hide statusbar
 %wd
@@ -29,10 +32,22 @@
 #
 ## Lock
 %V(46,1,8,9,-)
-%?mh<%xd(H)|>
+%?mh<%xd(H)>
+#
+## Channel configuration (mono, left, right)
+%V(89,1,11,9,-)
+%?St(channels)<|%xd(Ma)|%xd(Mb)|%xd(Mc)|%xd(Md)|%xd(Me)>
+#
+## Crossfeed
+%V(105,1,12,9,-)
+%?St(crossfeed)<|%xd(C)>
+#
+## Equalizer
+%V(122,1,15,9,-)
+%?St(eq enabled)<%xd(E)|>
 #
 ## Shuffle
-%V(146,1,13,9,-)
+%V(143,1,13,9,-)
 %?ps<%xd(S)>
 #
 ## Repeat mode
