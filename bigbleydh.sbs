@@ -50,15 +50,16 @@
 #
 #### UI viewport (menu) ##########################################################
 #
-# Smaller ui viewport with custom title
-%Vi(title,6,37,208,126,1)
-# Default ui viewport
-%Vi(-,6,37,208,126,1)
+# Define ui viewports
+%Vi(-,0,14,220,148,1)
+%Vi(title,0,38,220,125,1)
+%Vi(notitle,0,14,220,148,1)
+#
 # Whether a title is available or not
-%?Lt<%VI(title)>
+%?or(%if(%cs,=,10),%if(%cs,=,11),%if(%cs,=,21))<%VI(notitle)|%VI(title)>
 #
 # Title area
-%V(6,15,208,-,4)
+%V(0,14,220,-,4)
 %Vf(FFE60F)
 %?Lt<%s%Lt>
 #

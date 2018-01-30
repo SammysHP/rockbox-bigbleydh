@@ -58,43 +58,43 @@
 ## With album art
 #
 ## Album art
-%Vl(a,6,15,100,100,-)
-%Cl(0,0,100,100,c,c)
+%Vl(a,0,14,106,106,-)
+%Cl(0,0,106,106,c,c)
 %Cd
 #
 ## Playlist position
-%Vl(a,110,20,104,-,2)
+%Vl(a,110,20,110,-,2)
 %ar%s%pp / %pe
 #
 ## Artist
-%Vl(a,110,50,104,-,2)
+%Vl(a,110,50,110,-,2)
 %ac%s%?ia<%ia|%?iA<%iA|%?d(2)<%d(2)|>>>
 #
 ## Album
-%Vl(a,110,70,104,-,2)
+%Vl(a,110,70,110,-,2)
 %ac%s%?id<%id%?iy< %(%iy%)|>|%?d(1)<%d(1)|>>
 #
 ## Track
-%Vl(a,6,125,208,-,4)
+%Vl(a,0,125,220,-,4)
 %ac%s%?it<%it|%fn>
 #
 #
 ## Without album art
 #
 ## Playlist position
-%Vl(b,6,20,208,-,2)
+%Vl(b,0,20,220,-,2)
 %ar%s%pp / %pe
 #
 ## Artist
-%Vl(b,6,50,208,-,2)
+%Vl(b,0,50,220,-,2)
 %ac%s%?ia<%ia|%?iA<%iA|%?d(2)<%d(2)|>>>
 #
 ## Album
-%Vl(b,6,70,208,-,3)
+%Vl(b,0,70,220,-,3)
 %ac%s%?id<%id%?iy< %(%iy%)|>|%?d(1)<%d(1)|>>
 #
 ## Track
-%Vl(b,6,100,208,-,4)
+%Vl(b,0,100,220,-,4)
 %ac%s%?it<%it|%fn>
 #
 #
