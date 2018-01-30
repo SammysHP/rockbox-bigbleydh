@@ -1,0 +1,84 @@
+# load fonts
+%Fl(2,12-Nimbus.fnt)
+%Fl(3,14-Nimbus.fnt)
+%Fl(4,19-Nimbus.fnt)
+#
+# preload images
+%xl(V,volume.bmp,1,1,11)
+%xl(P,playmode.bmp,0,0,4)
+%xl(B,battery.bmp,0,0,9)
+%xl(H,hold.bmp,0,0)
+%xl(S,shuffle.bmp,0,0)
+%xl(R,repeat.bmp,0,0,4)
+#
+## Hide statusbar
+%wd
+#
+## Set backdrop
+%V(0,0,-,-,-)
+%VB
+%V(0,0,-,-,-)
+#
+#
+#### Statusbar ###################################################################
+#
+## Volume
+%V(0,0,45,-,2)
+%Vf(FFE60F)
+%al%?mv(2)<%pv dB|%?pv<%xd(Va)|%xd(Vb)|%xd(Vc)|%xd(Vd)|%xd(Ve)|%xd(Vf)|%xd(Vg)|%xd(Vh)|%xd(Vi)|%xd(Vj)|%xd(Vk)>>
+#
+## Lock
+%V(46,1,8,9,-)
+%?mh<%xd(H)|>
+#
+## Shuffle
+%V(146,1,13,9,-)
+%?ps<%xd(S)>
+#
+## Repeat mode
+%V(162,1,19,9,-)
+%?mm<|%xd(Ra)|%xd(Rb)|%xd(Rc)|%xd(Rd)>
+#
+## Playback mode icon
+%V(184,1,12,9,-)
+%?mp<|%xd(Pa)|%xd(Pb)|%xd(Pc)|%xd(Pd)>
+#
+## Battery
+%V(199,1,19,9,-)
+%?bp<%?bc<%t(0.5)%xd(Bb);%t(0.5)%xd(Bc);%t(0.5)%xd(Bd);%t(0.5)%xd(Be);%t(0.5)%xd(Bf);%t(0.5)%xd(Bg);%t(0.5)%xd(Bh)|%xd(Bi)>|%?bl<|%xd(Ba)|%xd(Bb)|%xd(Bc)|%xd(Bd)|%xd(Be)|%xd(Bf)|%xd(Bg)|%xd(Bh)|%xd(Bh)>>
+#
+#
+#### UI viewport (menu) ##########################################################
+#
+# Smaller ui viewport with custom title
+%Vi(title,6,37,208,126,1)
+# Default ui viewport
+%Vi(-,6,37,208,126,1)
+# Whether a title is available or not
+%?Lt<%VI(title)>
+#
+# Title area
+%V(6,15,208,-,4)
+%Vf(FFE60F)
+%?Lt<%s%Lt>
+#
+#
+#### Bottom line #################################################################
+#
+## Playback mode: song (a), record (b), FM radio (c)
+%?mp<|%Vd(a)|%Vd(a)|||%Vd(b)|%Vd(b)|%Vd(c)|%Vd(c)>
+#
+# Song
+%Vl(a,0,164,220,-,2)
+%Vf(FFE60F)
+%al%s%?ia<%ia|%?iA<%iA|%?d(2)<%d(2)|%Sx(Unknown)>>> - %?it<%it|%fn>
+#
+# Recording TODO
+%Vl(b,0,164,220,-,2)
+%Vf(FFE60F)
+%al%s%?ia<%ia|%?iA<%iA|%?d(2)<%d(2)|%Sx(Unknown)>>> - %?it<%it|%fn>
+#
+# FM radio TODO
+%Vl(c,0,164,220,-,2)
+%Vf(FFE60F)
+%al%s%?ia<%ia|%?iA<%iA|%?d(2)<%d(2)|%Sx(Unknown)>>> - %?it<%it|%fn>

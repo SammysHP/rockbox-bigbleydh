@@ -1,0 +1,114 @@
+# load fonts
+%Fl(2,12-Nimbus.fnt)
+%Fl(3,14-Nimbus.fnt)
+%Fl(4,19-Nimbus.fnt)
+#
+# preload images
+%xl(V,volume.bmp,1,1,11)
+%xl(P,playmode.bmp,0,0,4)
+%xl(B,battery.bmp,0,0,9)
+%xl(progress_bg,progress_bg.bmp,0,0)
+%xl(H,hold.bmp,0,0)
+%xl(S,shuffle.bmp,0,0)
+%xl(R,repeat.bmp,0,0,4)
+#
+## Hide statusbar
+%wd
+#
+## Set backdrop
+# %X(wps_backdrop.bmp)
+%V(0,0,-,-,-)
+%VB
+%V(0,0,-,-,-)
+#
+#
+#### Statusbar ###################################################################
+#
+## Volume
+%V(0,0,45,-,2)
+%Vf(FFE60F)
+%al%?mv(2)<%pv dB|%?pv<%xd(Va)|%xd(Vb)|%xd(Vc)|%xd(Vd)|%xd(Ve)|%xd(Vf)|%xd(Vg)|%xd(Vh)|%xd(Vi)|%xd(Vj)|%xd(Vk)>>
+#
+## Lock
+%V(46,1,8,9,-)
+%?mh<%xd(H)|>
+#
+## Shuffle
+%V(146,1,13,9,-)
+%?ps<%xd(S)>
+#
+## Repeat mode
+%V(162,1,19,9,-)
+%?mm<|%xd(Ra)|%xd(Rb)|%xd(Rc)|%xd(Rd)>
+#
+## Playback mode icon
+%V(184,1,12,9,-)
+%?mp<|%xd(Pa)|%xd(Pb)|%xd(Pc)|%xd(Pd)>
+#
+## Battery
+%V(199,1,19,9,-)
+%?bp<%?bc<%t(0.5)%xd(Bb);%t(0.5)%xd(Bc);%t(0.5)%xd(Bd);%t(0.5)%xd(Be);%t(0.5)%xd(Bf);%t(0.5)%xd(Bg);%t(0.5)%xd(Bh)|%xd(Bi)>|%?bl<|%xd(Ba)|%xd(Bb)|%xd(Bc)|%xd(Bd)|%xd(Be)|%xd(Bf)|%xd(Bg)|%xd(Bh)|%xd(Bh)>>
+#
+#
+#### Title info ##################################################################
+#
+## Switch between with and without album art
+%?C<%Vd(a)|%Vd(b)>
+#
+## With album art
+#
+## Album art
+%Vl(a,6,15,100,100,-)
+%Cl(0,0,100,100,c,c)
+%Cd
+#
+## Playlist position
+%Vl(a,110,20,104,-,2)
+%ar%s%pp / %pe
+#
+## Artist
+%Vl(a,110,50,104,-,2)
+%ac%s%?ia<%ia|%?iA<%iA|%?d(2)<%d(2)|>>>
+#
+## Album
+%Vl(a,110,70,104,-,2)
+%ac%s%?id<%id%?iy< %(%iy%)|>|%?d(1)<%d(1)|>>
+#
+## Track
+%Vl(a,6,125,208,-,4)
+%ac%s%?it<%it|%fn>
+#
+#
+## Without album art
+#
+## Playlist position
+%Vl(b,6,20,208,-,2)
+%ar%s%pp / %pe
+#
+## Artist
+%Vl(b,6,50,208,-,2)
+%ac%s%?ia<%ia|%?iA<%iA|%?d(2)<%d(2)|>>>
+#
+## Album
+%Vl(b,6,70,208,-,3)
+%ac%s%?id<%id%?iy< %(%iy%)|>|%?d(1)<%d(1)|>>
+#
+## Track
+%Vl(b,6,100,208,-,4)
+%ac%s%?it<%it|%fn>
+#
+#
+#### Progress ####################################################################
+#
+## Progress bar
+%V(6,151,208,7,-)
+%pb(0,0,208,7,progress.bmp,backdrop,progress_bg)
+#
+## Time: current / remaining (blink last 10 s) / total time
+%V(6,161,208,-,2)
+%al%pc%ac%?pE(10)<%t(0.3)-%pr;%t(0.3)|-%pr>%ar%pt
+#
+# ## EQ
+# %xl(Q,eq.bmp,0,0,2)
+# %V(200,161,13,9,0)
+# %?St(eq enabled)<%xd(Qa)|%xd(Qb)>
