@@ -37,23 +37,23 @@
 %?mh<%xd(H)>
 #
 ## Channel configuration (mono, left, right)
-%V(89,1,11,9,-)
+%V(95,1,11,9,-)
 %?St(channels)<|%xd(Ma)|%xd(Mb)|%xd(Mc)|%xd(Md)|%xd(Me)>
 #
 ## Crossfeed
-%V(105,1,12,9,-)
+%V(111,1,12,9,-)
 %?St(crossfeed)<|%xd(C)>
 #
 ## Equalizer
-%V(122,1,15,9,-)
+%V(128,1,15,9,-)
 %?St(eq enabled)<%xd(E)|>
 #
 ## Shuffle
-%V(143,1,13,9,-)
+%V(149,1,13,9,-)
 %?ps<%xd(S)>
 #
 ## Repeat mode
-%V(162,1,19,9,-)
+%V(168,1,13,9,-)
 %?mm<|%xd(Ra)|%xd(Rb)|%xd(Rc)|%xd(Rd)>
 #
 ## Playback mode icon
