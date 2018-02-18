@@ -3,7 +3,7 @@ DESTDIR = ./build
 
 all: build
 
-build:
+build: clean
 	mkdir -p "$(BUILDDIR)/.rockbox/themes"
 	mkdir -p "$(BUILDDIR)/.rockbox/wps"
 	cp bigbleydh.cfg "$(BUILDDIR)/.rockbox/themes"
@@ -22,4 +22,7 @@ zip: build
 	rm -f "$(BUILDDIR)/bigbleydh.zip"
 	cd "$(BUILDDIR)" && zip -r bigbleydh.zip .rockbox
 
-.PHONY: all build install zip
+clean:
+	rm -rf "$(BUILDDIR)/.rockbox"
+
+.PHONY: all build clean install zip
