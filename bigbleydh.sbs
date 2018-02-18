@@ -1,7 +1,6 @@
 # load fonts
 %Fl(2,12-Nimbus.fnt)
-%Fl(3,14-Nimbus.fnt)
-%Fl(4,19-Nimbus.fnt)
+%Fl(3,19-Nimbus.fnt)
 #
 # preload images
 %xl(V,volume.bmp,2,1,11)
@@ -66,15 +65,15 @@
 #### UI viewport (menu) ##########################################################
 #
 # Define ui viewports
-%Vi(-,0,14,220,148,1)
-%Vi(title,0,38,220,125,1)
-%Vi(notitle,0,14,220,148,1)
+%Vi(-,0,14,220,141,1)
+%Vi(title,0,38,220,118,1)
+%Vi(notitle,0,14,220,141,1)
 #
 # Whether a title is available or not
 %?or(%if(%cs,=,10),%if(%cs,=,11),%if(%cs,=,21))<%VI(notitle)|%VI(title)>
 #
 # Title area
-%V(0,14,220,-,4)
+%V(0,14,220,-,3)
 %Vf(FFE60F)
 %?Lt<%s%Lt>
 #
@@ -85,16 +84,16 @@
 %?mp<|%Vd(a)|%Vd(a)|||%Vd(b)|%Vd(b)|%Vd(c)|%Vd(c)>
 #
 # Song
-%Vl(a,0,164,220,-,2)
+%Vl(a,0,157,220,-,3)
 %Vf(FFE60F)
 %al%s%?ia<%ia|%?iA<%iA|%?d(2)<%d(2)|%Sx(Unknown)>>> - %?it<%it|%fn>
 #
 # Recording TODO
-%Vl(b,0,164,220,-,2)
+%Vl(b,0,157,220,-,3)
 %Vf(FFE60F)
 %al%s%?ia<%ia|%?iA<%iA|%?d(2)<%d(2)|%Sx(Unknown)>>> - %?it<%it|%fn>
 #
 # FM radio TODO
-%Vl(c,0,164,220,-,2)
+%Vl(c,0,157,220,-,3)
 %Vf(FFE60F)
 %al%s%?ia<%ia|%?iA<%iA|%?d(2)<%d(2)|%Sx(Unknown)>>> - %?it<%it|%fn>

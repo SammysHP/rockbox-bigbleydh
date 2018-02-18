@@ -1,7 +1,7 @@
 # load fonts
 %Fl(2,12-Nimbus.fnt)
-%Fl(3,14-Nimbus.fnt)
-%Fl(4,19-Nimbus.fnt)
+%Fl(3,19-Nimbus.fnt)
+%Fl(4,35-Nimbus.fnt)
 #
 # preload images
 %xl(V,volume.bmp,2,1,11)
@@ -67,49 +67,20 @@
 #
 #### Title info ##################################################################
 #
-## Switch between with and without album art
-%?C<%Vd(a)|%Vd(b)>
-#
-## With album art
-#
-## Album art
-%Vl(a,0,14,106,106,-)
-%Cl(0,0,106,106,c,c)
-%Cd
-#
 ## Playlist position
-%Vl(a,110,20,110,-,2)
+%V(0,20,220,-,3)
 %ar%s%pp / %pe
 #
 ## Artist
-%Vl(a,110,50,110,-,2)
+%V(0,45,220,-,3)
 %ac%s%?ia<%ia|%?iA<%iA|%?d(2)<%d(2)|>>>
 #
 ## Album
-%Vl(a,110,70,110,-,2)
+%V(0,70,220,-,3)
 %ac%s%?id<%id%?iy< %(%iy%)|>|%?d(1)<%d(1)|>>
 #
 ## Track
-%Vl(a,0,125,220,-,4)
-%ac%s%?it<%it|%fn>
-#
-#
-## Without album art
-#
-## Playlist position
-%Vl(b,0,20,220,-,2)
-%ar%s%pp / %pe
-#
-## Artist
-%Vl(b,0,50,220,-,2)
-%ac%s%?ia<%ia|%?iA<%iA|%?d(2)<%d(2)|>>>
-#
-## Album
-%Vl(b,0,70,220,-,3)
-%ac%s%?id<%id%?iy< %(%iy%)|>|%?d(1)<%d(1)|>>
-#
-## Track
-%Vl(b,0,100,220,-,4)
+%V(0,100,220,-,4)
 %ac%s%?it<%it|%fn>
 #
 #
@@ -122,8 +93,3 @@
 ## Time: current / remaining (blink last 10 s) / total time
 %V(6,161,208,-,2)
 %al%pc%ac%?pE(10)<%t(0.3)-%pr;%t(0.3)|-%pr>%ar%pt
-#
-# ## EQ
-# %xl(Q,eq.bmp,0,0,2)
-# %V(200,161,13,9,0)
-# %?St(eq enabled)<%xd(Qa)|%xd(Qb)>
